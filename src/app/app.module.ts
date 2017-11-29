@@ -5,10 +5,12 @@ import { AppComponent } from './app.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { HttpModule } from '@angular/http';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent
   ],
   imports: [
     BsDropdownModule.forRoot(), 

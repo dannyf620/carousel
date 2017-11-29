@@ -7,12 +7,14 @@
         <carousel class='text-center' *ngIf="news">
 
           <slide *ngFor="let article of news.articles">
-            <a href="{{article.url}}" target="_blank">
-
+            <a (click)="selectNew(article)">
               <img class="img-carousel" src="{{article.urlToImage}}" alt="First slide" style="display: block; width: 100%;">
+              <p class='carousel-shadow corner'>
+                <samp>{{article.author}}</samp>, {{article.publishedAt | date}}</p>
+
               <div class="carousel-caption">
                 <h3 class='carousel-shadow'>{{article.title}}</h3>
-                <p class='carousel-shadow'> {{article.description}}</p>
+                
               </div>
             </a>
           </slide>
@@ -21,3 +23,4 @@
     </div>
   </div>
 </div>
+<app-menu [article]="article"></app-menu>

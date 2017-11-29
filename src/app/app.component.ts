@@ -1,3 +1,4 @@
+import { Article } from './shared/article';
 import { News } from './shared/news';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
@@ -10,6 +11,7 @@ import { Http, Response } from '@angular/http';
 export class AppComponent implements OnInit {
   title = 'app';
   news: News;
+  article: Article;
   url: string = 'https://newsapi.org/v1/articles?source=techcrunch&apiKey=5515e583de1f4b30bfe794dd62f5e80d';
   constructor(private http: Http) {
     this.getNews();
@@ -21,6 +23,9 @@ export class AppComponent implements OnInit {
         this.news = data.json();
 
       })
+  }
+  selectNew(art) {
+    this.article = art;
   }
   ngOnInit() {
 
